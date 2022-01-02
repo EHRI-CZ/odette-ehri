@@ -1477,6 +1477,229 @@ Go through unuseful link
       <xsl:when test="descendant::text:note">
         <xsl:apply-templates/>
       </xsl:when>
+
+      <!-- EHRI specific -->
+      <xsl:when test="contains(@xlink:href, 'geonames')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/ehri_terms')">
+        <term>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">subject</xsl:attribute>
+          <xsl:apply-templates/>
+        </term>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/terezin-terms-keyword-jmp')">
+        <term>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">subject</xsl:attribute>
+          <xsl:apply-templates/>
+        </term>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/ehri-ghettos')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">ghetto</xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/ehri_ghettos')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">ghetto</xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/ehri-camps')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">camp</xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/ehri_camps')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">camp</xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, 'keywords/terezin-places-place')">
+        <placeName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </placeName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/ehri-cb')">
+        <orgName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </orgName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/ehri_cb')">
+        <orgName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </orgName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/terezin-jewishcouncil-organisation')">
+        <orgName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </orgName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/keywords/jc-organisations')">
+        <orgName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </orgName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/ehri-pers')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/ehri_pers')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/terezin-victims-person')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">victim</xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/terezin-persons')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">victim</xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/jc_persons')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">victim</xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, 'www.holocaust.cz/databaze-obeti/obet/')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">victim</xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, 'yvng.yadvashem.org/nameDetails')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:attribute name="type">victim</xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <xsl:when test="contains(@xlink:href, '/authorities/jc-persons')">
+        <persName>
+          <xsl:attribute name="ref">
+            <xsl:value-of select="@xlink:href"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </persName>
+      </xsl:when>
+      <!-- EHRI local dictionary -->
+      <xsl:when test="contains(@xlink:href, '#ehri')">
+        <xsl:variable name="local-link" select="normalize-space(translate(@xlink:href, '#', ' '))"/>
+        <xsl:choose>
+          <xsl:when test="document($local-dictionary)//tei:person/@xml:id = $local-link">
+            <persName>
+              <xsl:attribute name="ref">
+                <xsl:value-of select="@xlink:href"/>
+              </xsl:attribute>
+              <xsl:apply-templates/>
+            </persName>
+          </xsl:when>
+          <xsl:when test="document($local-dictionary)//tei:org/@xml:id = $local-link">
+            <orgName>
+              <xsl:attribute name="ref">
+                <xsl:value-of select="@xlink:href"/>
+              </xsl:attribute>
+              <xsl:apply-templates/>
+            </orgName>
+          </xsl:when>
+          <xsl:when test="document($local-dictionary)//tei:place/@xml:id = $local-link">
+            <placeName>
+              <xsl:attribute name="ref">
+                <xsl:value-of select="@xlink:href"/>
+              </xsl:attribute>
+              <xsl:apply-templates/>
+            </placeName>
+          </xsl:when>
+          <xsl:when test="document($local-dictionary)//tei:item/@xml:id = $local-link">
+            <term>
+              <xsl:attribute name="ref">
+                <xsl:value-of select="@xlink:href"/>
+              </xsl:attribute>
+              <xsl:apply-templates/>
+            </term>
+          </xsl:when>
+          
+          <xsl:otherwise>
+            <ref>
+              <xsl:attribute name="target">
+                <xsl:value-of select="@xlink:href"/>
+              </xsl:attribute>
+              <xsl:apply-templates/>
+            </ref>
+          </xsl:otherwise>
+
+        </xsl:choose>
+
+      </xsl:when>
+
       <xsl:otherwise>
         <ref>
           <xsl:attribute name="target">
