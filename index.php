@@ -22,7 +22,7 @@ if (isset($_POST['post'])) {
     <p>[en] Edit your text corpus in your word processor
       (LibreOffice, Microsoft.Word),
        apply styles abd get them back in XML/TEI with Odette.</p>
-    <p>[fr] Éditez votre corpus au traitement de textes (LibreOffice, Microsoft.Word), utilisez une feuille de styles, Odette vous les rendra en XML/TEI.</p>
+    <!--<p>[fr] Éditez votre corpus au traitement de textes (LibreOffice, Microsoft.Word), utilisez une feuille de styles, Odette vous les rendra en XML/TEI.</p>-->
     </header>
     <?php
   if (isset($_REQUEST['format'])) $format=$_REQUEST['format'];
@@ -52,19 +52,9 @@ if (isset($_POST['post'])) {
       </div>
     </form>
 
-    <p>[fr] Odette, customisations pour des projets éditoriaux</p>
-    <ul>
-        <?php
-    foreach(glob(dirname(__FILE__)."/*", GLOB_ONLYDIR) as $dir) {
-      $basename = basename($dir);
-      if ($basename[0] == '.' || $basename[0] == '_') continue;
-      if (!is_readable($dir."/".$basename.".xml")) continue;
-      echo "<li><a href=\"".$basename."/\">".$basename."</a></li>\n";
-    }
-     ?>
-    </ul>
-
-    <p>Odette est un programme qui enregistre 15 années d’expérience,
+	<p>ODT to TEI transformation based on the <a href="https://github.com/oeuvres/odette">Odette tool</a> and customised for the purposes of EHRI editions.</p>
+	<p>See also the <a href="https://documentation.ehri-project.eu/en/latest/editions/tei.html">documentation for EHRI Editions</a>.</p>
+    <!--<p>Odette est un programme qui enregistre 15 années d’expérience,
     avec des dizaines de projets scientifiques
     (romans, théâtre, correspondances, essais, presse ancienne…), 
     et plusieurs milliers 
@@ -93,7 +83,7 @@ if (isset($_POST['post'])) {
     </p>
 
     <p>Pour plus d’explications : <a href="//resultats.hypotheses.org/267">Glorieux, 2015. <i>Le traitement de textes pour produire des documents structurés (XML/TEI)</i></a>.</p> <p>Renseignements, <a onmouseover="this.href='mailto'+'\x3A'+'frederic.glorieux'+'\x40'+'fictif.org'" href="#">Frédéric Glorieux</a>.</p>
-
+-->
 
   </body>
 </html>
