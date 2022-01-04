@@ -141,3 +141,11 @@ s@<(cell|item|head|p)( [^>]+)?> +@<\1\2>@g
 s@<space/>\s*</(cell|head|item|l|p)>@</\1>@g
 s@<space>[  ]*</space>\s*</(cell|head|item|l|p)>@</\1>@g
 s@ +</(cell|head|item|l|p)>@</\1>@g
+
+# EHRI replacements
+
+#s@\{\{(.*)\}\}@<persName>\1</persName>@g
+#s@\[\[(.*)\]\]@<orgName>\1</orgName>@g
+#s@\<\<(.*)\>\>@<term>\1</term>@g
+
+s@\}\}@</persName>@g
