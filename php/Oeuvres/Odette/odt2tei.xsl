@@ -125,7 +125,7 @@ la sortie en la traitant avec d'autres filtres (expressions régulières, XSLT).
         </body>
       </xsl:when>
       <xsl:otherwise>
-        <!--<xsl:processing-instruction name="xml-stylesheet"> type="text/xsl" href="../teinte/tei2html.xsl"</xsl:processing-instruction>-->
+        <xsl:processing-instruction name="xml-stylesheet"> type="text/xsl" href="../teinte/tei2html.xsl"</xsl:processing-instruction>
         <xsl:processing-instruction name="xml-model"> href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
         <xsl:if test="function-available('date:date-time')">
           <xsl:comment>
