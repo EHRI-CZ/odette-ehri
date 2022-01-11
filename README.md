@@ -1,3 +1,11 @@
+# EHRI ODT to TEI conversion
+
+ODT to TEI transformation based on the Odette tool and customised for the purposes of EHRI editions.
+
+See also the documentation for EHRI Editions: https://documentation.ehri-project.eu/en/latest/editions/tei.html.
+
+The Odette documentation follows below.
+
 # Odette
 
 From text processor odt file, extract all possible information in semantic XML (TEI).
