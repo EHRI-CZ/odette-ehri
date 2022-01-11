@@ -99,6 +99,13 @@ la sortie en la traitant avec d'autres filtres (expressions régulières, XSLT).
   <xsl:variable name="abc">abcdefghijklmnopqrstuvwxyzaaaaaaeeeeeiiiidnoooooœuuuuybbaaaaaaaceeeeiiiionooooouuuuyyb</xsl:variable>
   <!-- Shall we infer title from content ? -->
   <xsl:variable name="h" select="//text:h[1]"/>
+  
+  <!-- EHRI: local dictionary - FIXME -->
+  <!-- <xsl:param name="local-dictionary"
+    select="'/home/michal/michal.frankl@gmail.com/zm/projects/EHRI-2/EHRI-2_shared/EHRI_early_testimony/TEI/ET_Local_dictionary/ET_local_dictionary.xml'"/>-->
+  <xsl:param name="local-dictionary"
+    select="'DR_local_dictionary.xml'"/>
+  
   <!-- 
     Be more precise than root, may catch the root of a nodeset() function
   <xsl:template match="/"/>
@@ -118,8 +125,8 @@ la sortie en la traitant avec d'autres filtres (expressions régulières, XSLT).
         </body>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:processing-instruction name="xml-stylesheet"> type="text/xsl" href="../teinte/tei2html.xsl"</xsl:processing-instruction>
-        <xsl:processing-instruction name="xml-model"> href="http://oeuvres.github.io/teinte/teinte.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
+        <!--<xsl:processing-instruction name="xml-stylesheet"> type="text/xsl" href="../teinte/tei2html.xsl"</xsl:processing-instruction>-->
+        <xsl:processing-instruction name="xml-model"> href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"</xsl:processing-instruction>
         <xsl:if test="function-available('date:date-time')">
           <xsl:comment>
             <xsl:text>Odette: </xsl:text>
