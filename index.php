@@ -18,8 +18,8 @@ if (isset($_POST['post'])) {
   </head>
   <body class="article">
     <header>
-    <h1>Odette: odt ▶ <a href="//www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-ELEMENTS.html">TEI</a></h1>
-    <p>[en] Edit your text corpus in your word processor
+    <h1>Odette: odt ▶ <a href="//www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-ELEMENTS.html">TEI</a></h1>
+    <p>Edit your text corpus in your word processor
       (LibreOffice, Microsoft Word),
        apply styles and get them back in XML/TEI with Odette.</p>
     <!--<p>[fr] Éditez votre corpus au traitement de textes (LibreOffice, Microsoft.Word), utilisez une feuille de styles, Odette vous les rendra en XML/TEI.</p>-->
